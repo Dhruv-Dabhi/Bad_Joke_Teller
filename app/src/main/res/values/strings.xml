@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Bad Jokes</string>
+    <string name="oneMore">One More!</string>
+    <string name="ready">I\'m Ready!</string>
+    <string name="text">TextView</string>
+    <string name="exitb">exit button</string>
+</resources>
