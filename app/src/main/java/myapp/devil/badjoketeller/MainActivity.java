@@ -1,4 +1,4 @@
-package com.example.badjoketeller;
+package myapp.devil.badjoketeller;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,13 +12,16 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Button;
+
+import myapp.devil.badjoketeller.R;
+
 import java.util.Arrays;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button oneMore;
-    ImageButton exit, shareButton;
+    ImageButton exit, shareButton, privacyPolicyButton;
     TextView txt1, txt2;
     int r = 0;
     Integer[] arr;
@@ -30,49 +33,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         setContentView(R.layout.activity_main);
+
         oneMore = findViewById(R.id.oneMore);
         shareButton = findViewById(R.id.shareButton);
+        privacyPolicyButton = findViewById(R.id.privacyPolicy);
         exit = findViewById(R.id.imageExitButton);
         txt1 = findViewById(R.id.textView);
         txt2 = findViewById(R.id.textView2);
+
         txt1.setText("Welcome to the world of hilariously bad jokes.\n\n Hope you enjoy them!");
         txt2.setText(" ");
+
         oneMore.setOnClickListener(this);
         shareButton.setOnClickListener(this);
+        privacyPolicyButton.setOnClickListener(this);
+        exit.setOnClickListener(this);
+
         oneMore.setText(R.string.ready);
-        shareButton.setVisibility(View.INVISIBLE);
-
-        exit.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle("Exit");
-                builder.setMessage("Sure want to exit?");
-
-                builder.setPositiveButton("Yes. Exit now", new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                    }
-                }
-                );
-
-                builder.setNegativeButton("No. More jokes!", new DialogInterface.OnClickListener()
-                {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i)
-                {dialogInterface.dismiss();}
-
-                }
-                );
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
-        });
-
 
         arr = new Integer[jokesArray.length];
         for (int i = 0; i < arr.length; i++)
@@ -87,13 +64,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (v.getId() == shareButton.getId())
         {
-            shareJoke(arr[r-1]);
+            if(oneMore.getText().toString().equalsIgnoreCase("I'm Ready!"))
+            {
+                shareJoke(-1);
+            }
+            else
+            {
+                shareJoke(arr[r-1]);
+            }
         }
-        else
+        else if (v.getId() == oneMore.getId())
         {
-            shareButton.setVisibility(View.VISIBLE);
             getJoke(arr[r]);
             r++;
+        }
+        else if (v.getId() == privacyPolicyButton.getId())
+        {
+            Intent intent = new Intent(getApplicationContext(),
+                    PrivacyPolicyActivity.class);
+            startActivity(intent);
+        }
+        else if (v.getId() == exit.getId())
+        {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle("Exit");
+            builder.setMessage("Sure want to exit?");
+
+            builder.setPositiveButton("Yes. Exit now", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    }
+            );
+
+            builder.setNegativeButton("No. More jokes!", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i)
+                        {dialogInterface.dismiss();}
+
+                    }
+            );
+            AlertDialog dialog = builder.create();
+            dialog.show();
         }
     }
 
@@ -145,13 +160,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     void shareJoke(int r)
     {
         String msg;
-        if (jokesArray[r][1].equals("0"))
+        if(r == -1)
         {
-            msg = jokesArray[r][0]+ "\n\n:D :D\nFor more hilarious jokes, download this app: https://drive.google.com/open?id=1811JRDfzw0545tUTb386jtGBVF-qH0Zi";
+            msg = "Hey! Check out this app:";
+        }
+        else if (jokesArray[r][1].equals("0"))
+        {
+            msg = jokesArray[r][0]+ "\n\n:D :D\nFor more hilarious jokes, download this app: ";
         }
         else
         {
-            msg = jokesArray[r][0] + "\n" +".\n"+".\n"+".\n" + jokesArray[r][1] + "\n\n:D :D\nFor more hilarious jokes, download this app: https://drive.google.com/open?id=1811JRDfzw0545tUTb386jtGBVF-qH0Zi";
+            msg = jokesArray[r][0] + "\n" +".\n"+".\n"+".\n" + jokesArray[r][1] + "\n\n:D :D\nFor more hilarious jokes, download this app: ";
         }
 
         Intent sendIntent = new Intent();

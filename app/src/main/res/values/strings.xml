@@ -4,4 +4,8 @@
     <string name="ready">I\'m Ready!</string>
     <string name="text">TextView</string>
     <string name="exitb">exit button</string>
+    <string name="policyb">policy button</string>
+    <string name="shareb">share button</string>
+    <string name="Home">Home</string>
+
 </resources>

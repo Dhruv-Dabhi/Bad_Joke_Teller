@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="2.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +7,20 @@
     android:background="#BBDEFB"
     android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
     android:screenOrientation="portrait"
-    tools:context=".MainActivity">
+    tools:context="myapp.devil.badjoketeller.MainActivity">
+
+    <ImageButton
+        android:id="@+id/privacyPolicy"
+        android:layout_width="66dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:background="#BBDEFB"
+        app:layout_constraintEnd_toStartOf="@+id/shareButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_info_details"
+        android:contentDescription="@string/policyb" />
 
     <Button
         android:id="@+id/oneMore"
@@ -18,8 +31,10 @@
         android:layout_marginTop="31dp"
         android:layout_marginEnd="135dp"
         android:layout_marginRight="135dp"
+        android:layout_marginBottom="139dp"
         android:background="#64B5F6"
         android:textColor="#E8E9FA"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -38,7 +53,6 @@
         android:padding="5dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:text="@string/text"
         android:textSize="25sp"
         app:fontFamily="@font/luckiest_guy"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,8 +63,8 @@
         android:id="@+id/textView2"
         android:layout_width="360dp"
         android:layout_height="140dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginLeft="41dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="41dp"
         android:layout_marginRight="41dp"
@@ -67,7 +81,6 @@
         app:fontFamily="@font/luckiest_guy"
         app:layout_constraintBottom_toTopOf="@+id/oneMore"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -94,6 +107,7 @@
         android:background="#BBDEFB"
         app:layout_constraintEnd_toStartOf="@+id/imageExitButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/actionModeShareDrawable" />
+        app:srcCompat="?attr/actionModeShareDrawable"
+        android:contentDescription="@string/shareb" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

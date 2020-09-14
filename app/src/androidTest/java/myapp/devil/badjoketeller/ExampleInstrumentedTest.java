@@ -1,4 +1,4 @@
-package com.example.badjoketeller;
+package myapp.devil.badjoketeller;
 
 import android.content.Context;
 
