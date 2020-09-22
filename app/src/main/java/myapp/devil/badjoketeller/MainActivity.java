@@ -13,8 +13,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Button;
 
-import myapp.devil.badjoketeller.R;
-
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -162,15 +160,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String msg;
         if(r == -1)
         {
-            msg = "Hey! Check out this app:";
+            msg = "Hey! Check out this jokes app:\nhttps://play.google.com/store/apps/details?id=myapp.devil.badjoketeller";
         }
         else if (jokesArray[r][1].equals("0"))
         {
-            msg = jokesArray[r][0]+ "\n\n:D :D\nFor more hilarious jokes, download this app: ";
+            msg = jokesArray[r][0]+ "\n\n:D :D\nFor more hilarious jokes, download this app:\nhttps://play.google.com/store/apps/details?id=myapp.devil.badjoketeller";
         }
         else
         {
-            msg = jokesArray[r][0] + "\n" +".\n"+".\n"+".\n" + jokesArray[r][1] + "\n\n:D :D\nFor more hilarious jokes, download this app: ";
+            msg = jokesArray[r][0] + "\n" +".\n"+".\n"+".\n" + jokesArray[r][1] + "\n\n:D :D\n\nFor more hilarious jokes, download this app:\nhttps://play.google.com/store/apps/details?id=myapp.devil.badjoketeller";
         }
 
         Intent sendIntent = new Intent();
@@ -202,7 +200,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     {"What’s red and bad for your teeth?","A brick."},
                     {"Two guys walk into a bar.","The third guy ducks."},
                     {"What do you call a fake noodle?","An impasta."},
-                    {"Why does Snoop Dogg use an umbrella?","For drizzle."},
+                    {"Why does Snoop Dogg use an umbrella?","Fo' drizzle."},
                     {"Did you hear the story about the claustrophobic astronaut?","He just needed some space."},
                     {"What do you call an alligator in a vest?","An in-vest-igator."},
                     {"What kind of tea is hard to swallow?","Reality."},
@@ -438,6 +436,81 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     {"Men are from Mars.\n" +"\n" +"Women are from Venus.\n" +"\n" + "Cows are from the Moooooooooon.","0"},
                     {"The last 4 letters in the word \"queue\" are silent. Can they be waiting their turn?","0"},
                     {"Isn’t it funny that when boats get sick, they actually go to the doc(k)?","0"},
-                    {"What does a skeleton say when he enters a bar?","BONEjour!"}
+                    {"What does a skeleton say when he enters a bar?","BONEjour!"},
+                    {"What does a baby computer call its father?","Data"},
+                    {"Why are colds bad criminals?","Because they’re easy to catch."},
+                    {"How does a penguin build its house?","Igloos it together."},
+                    {"Which knight invented King Arthur’s Round Table?"," Sir Cumference."},
+                    {"What do sprinters eat before a race?","Nothing. They fast."},
+                    {"What happens when you witness a ship wreck?"," You let it sink in."},
+                    {"How can you find Will Smith in the snow?","Follow the fresh prints."},
+                    {"What does a clock do when it’s hungry?","It goes back four seconds."},
+                    {"What’s the easiest way to make a glow worm happy?","Cut off its tail, it’ll be delighted!"},
+                    {"Why did Adele cross the road?","To say hello from the other side!"},
+                    {"What did the teacher do with the student’s report on cheese?","She grated it."},
+                    {"What’s the difference between a piano and a fish? ","You can tune a piano, but you can’t tuna fish."},
+                    {"What kind of car does an egg drive?","A Yolkswagen."},
+                    {"Why was 6 afraid of 7?","Because 7 ate 9."},
+                    {"What grades did the pirate get on his report card?","Seven Cs"},
+                    {"How do you make a tissue dance?","Put a little boogie in it"},
+                    {"Did you hear about the mediocre restaurant on the moon?","It has great food but no atmosphere"},
+                    {"What kinds of pictures do hermit crabs take?","Shellfies"},
+                    {"What’s the difference between an alligator and a crocodile?","One you’ll see later, the other you’ll see in a while"},
+                    {"What do you do when you see a spaceman?","Park in it, man"},
+                    {"Why do you never see elephants hiding in trees?","Because they’re so damn good at it!"},
+                    {"What’s the No. 1 cause of divorce?","Marriage"},
+                    {"Why did the coffee call the police?","It got mugged!"},
+                    {"Why did Cyclops close his school?","He only had one pupil"},
+                    {"Where do skunks pray?","In pews"},
+                    {"Why do birds fly south for the winter?","Because it’s too far to walk"},
+                    {"How did Darth Vader know what Luke Skywalker got him for Christmas?","He felt his presents"},
+                    {"hat was the mummy’s favorite type of music?","Wrap"},
+                    {"I’m only familiar with 25 letters of the alphabet","I don’t know why"},
+                    {"What did one wall say to the other?","Meet me at the corner!"},
+                    {"What do you call a large African mammal with long hair and sandals?","A hippie-potamus."},
+                    {"How do you think the unthinkable?","With an itheberg"},
+                    {"Why did Mozart hate chickens?","Because when he asked them for their favorite composer, they said, \"Bach! Bach! Bach!\""},
+                    {"Why did the toilet paper roll downhill?","To get to the bottom"},
+                    {"Why are groups of fish so smart?","Because they travel in schools"},
+                    {"I tried buying camouflage the other day..","..but I couldn’t find any"},
+                    {"What did one bean say to the other?","\"How you bean?\""},
+                    {"How many tickles can an octopus take?","Tentacles"},
+                    {"Why did Cinderella get kicked off of the soccer team?","Because she kept running from the ball!"},
+                    {"How many ears do space aliens have?","Three: The left ear, right ear and the final front ear."},
+                    {"Cosmetic surgery used to be taboo, but now when you talk about Botox no one raises an eyebrow.","0"},
+                    {"Did you hear the one about the three watering holes in the ground?","Well, well, well..."},
+                    {"What shivers at the bottom of the ocean?","A nervous wreck"},
+                    {"What do hillbillies drink from?","Hiccups"},
+                    {"What’s even better than Ted Danson?","Ted singing and Danson"},
+                    {"What do you call a fish with two knees?","A tunee fish"},
+                    {"What do you call someone else’s cheese?","Nacho cheese!"},
+                    {"The rotation of the earth really makes my day.","0"},
+                    {"What did the animals tell Simba when he walked too slow?","Mufasa!"},
+                    {"What do you call someone who points out the obvious?","Someone who points out the obvious"},
+                    {"What’s green and sings?","Elvis Parsley"},
+                    {"Jumper cable walks into a bar. The bartender says..","\"I'll serve you, but don't start anything.\""},
+                    {"How much does an influencer weigh?","An Instagram"},
+                    {"What’s the difference between a Hippo and a Zippo?","One is heavy and one is a lot lighter"},
+                    {"What kind of dinosaur has the biggest vocabulary?","The thesaurus."},
+                    {"How did the hipster burn his mouth?","He sipped his coffee before it was cool"},
+                    {"Why was the broom late for a meeting?","It overswept"},
+                    {"What;s the derivative of Amazon?","Amazon Prime"},
+                    {"What’s the difference between a prince and a tennis ball?","One is heir to the throne and one is thrown in the air"},
+                    {"A man died after drinking varnish. It was a terrible end, but a beautiful finish.","0"},
+                    {"Why can’t wildcats take tests?","There are too many cheetahs"},
+                    {"Why did the picture go to jail?","Because it was framed"},
+                    {"Does anyone need an ark?","I Noah guy."},
+                    {"What’s the loudest kind of pet you can get?","A trumpet"},
+                    {"You know why they called it \"the dark ages\"?","There were too many knights"},
+                    {"What did Sushi A say to Sushi B?","\"Wasa-B!\""},
+                    {"The shovel was a truly groundbreaking invention.","0"},
+                    {"What’s a foot’s favorite snack?","Dori-toes"},
+                    {"What did one elevator say to the other?","\"I think I’m coming down with something.\""},
+                    {"What’s brass and sounds like Tom Jones?","Trombones"},
+                    {"What can you do if you’re scared of elevators?","Take steps to avoid them."},
+                    {"What did the princess say in the photo booth?","\"Someday my prints will come.\""},
+                    {"What do you call a snobby criminal going downstairs?","A condescending con descending."},
+                    {"What do you call an Italian astronaut?","A specimen."},
+                    {"What’s the difference between a dapper man on a bicycle and a poorly dressed man on a unicycle?","Attire!"}
             };
 }
